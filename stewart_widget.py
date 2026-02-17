@@ -74,7 +74,9 @@ class StewartPlatformWidget:
     #  FIGURE
     # ------------------------------------------------------------------ #
     def _build_figure(self):
+        plt.ioff()  # Prevent automatic display of the figure
         self.fig = plt.figure(figsize=(9, 8))
+        plt.ion()  # Re-enable interactive mode
         self.ax_3d = self.fig.add_axes([0.05, 0.27, 0.9, 0.70], projection='3d')
         self.ax_3d.set_xlabel('X'); self.ax_3d.set_ylabel('Y'); self.ax_3d.set_zlabel('Z')
         self.ax_time = self.fig.add_axes([0.1, 0.05, 0.85, 0.15])
